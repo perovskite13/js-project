@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Introduction to JavaScript</title>
+        <meta name="description" content="JavaScript Demo">
+        <meta name="author" content="She Codes">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        <header>
+            <h1>Introduction to JS</h1>
+        </header>
+
+        <div id="wrapper">
+
+            <div id="number" class="component">
+                <h2>Exercise 1</h1>
+                <h2>Number counter</h2>
+                <p>Plus or Minus?:</p>
+                <input type="button" onclick="changeNumbers(1)" value="+">
+                <input type="button" onclick="changeNumbers(-1)" value="-">
+            </div>
+            
+            <div id="fruit" class="component">
+                <h2>Exercise 2</h1>
+                <h2>Fruit baskets</h2>
+                <p>Which fruit do you want?:</p>
+                <button type="button" onclick="addFruit(this)" value="Orange">
+                    <p>Orange : $4 </p>
+
+                <button type="button" onclick="addFruit(this)" value="Apple">
+                    <p>Apple: $2 </p>
+
+                <button type="button" onclick="addFruit(this)" value="Banana">
+                    <p>Banana: $5 </p> </button>
+                <p> BASKET </p>
+            </div>
+        </div>
+    </body>
+    <script src="newscript.js"></script>
+
+</html>
