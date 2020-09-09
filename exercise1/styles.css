@@ -17,7 +17,7 @@ text{
     justify-content: center;
 }
 
-#wrapper {
+#wrapper{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -96,3 +96,43 @@ form {
     box-shadow: inset 0 0 150px yellow, 0px 0 30px yellow;
 }
 
+.hole {
+    width: 120px;
+    height: 120px;
+    border-style: solid;
+    border-color: black;
+    background-color:white;
+  }
+  
+.grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    width: 570px;
+    height: 400px;
+    margin:0px;
+    padding: 0px;
+  }
+
+  .mole {
+    background-image: url('mole.JPG');
+    background-size: cover;
+  }
+  
+  .mole:hover{
+      cursor: pointer;
+  }
+
+.picgrid{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    width: 570px;
+    height: 400px;
+    margin-bottom:10px;
+    padding: 0px;
+    background-image: url('https://picsum.photos/600');
+    background-size: cover;
+  }
