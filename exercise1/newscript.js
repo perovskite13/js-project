@@ -90,166 +90,41 @@ holes.forEach(hit =>{
 })
 
 //EXERCISE 4
-let picgrid = document.getElementById('picg'); //retrieve html class
+const canvas = document.getElementById('picg'); //retrieve html class
+const ctx = canvas.getContext('2d');
 
-var input = document.querySelector('#inputform').value;
-console.log(input);
+const input = document.querySelector('#inputform');
+console.log(ctx);
 
-function generateIQ (input) {
-    console.log(input);
-    var text = "";
-    var i;
-    for (i = 0; i < input.length ;i++) {
-        text += input.elements[i].value + "<br>";
-    }
-    console.log(text);
+var topTextSize = 0.1;
+var fontSize = 0.1;
 
-    //document.getElementById("demo").innerHTML = text;
-}
+function generateIQ () {
 
-    //let generateBtn, canvas, ctx;
-//canvas.width = picgrid.width;
-//canvas.height = picgrid.height;
-    //let fontSize;
+    let text = input.value;
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    //Draw text
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
     // Text style: white with black borders
-    // ctx.fillStyle = 'white';
-    // ctx.strokeStyle = 'black';
-    // ctx.textAlign = 'center';
+    //ctx.fillStyle = 'white';
+    ctx.strokeStyle = 'white';
+    ctx.textAlign = 'center';
 
     // Top text font size
-    // fontSize = picgrid.width * topTextSize;
-    // ctx.font = fontSize + 'px Impact';
-    // ctx.lineWidth = fontSize / 20;
+    fontSize = canvas.width * topTextSize;
+    ctx.font = fontSize + 'px Serif';
+    //ctx.lineWidth = fontSize / 30;
 
-    // Draw text
-//     text.split('\n').forEach(function (t, i) {
-//         ctx.fillText(t, picgrid.width / 2);
-//         ctx.strokeText(t, picgrid.width / 2);
-//     });
+    // Draw top text
+    ctx.textBaseline = 'top';
+    text.split('\n').forEach(function (t, i) {
+        ctx.fillText(t, canvas.width / 2, i * fontSize, canvas.width);
+        ctx.strokeText(t, canvas.width / 2, i * fontSize, canvas.width);
+    });
+}
 
-
-// function init () {
-//     // Initialize variables
-//     generateBtn = document.getElementById('generate-btn');
-//     //ctx = canvas.getContext('2d');
-
-//     // Generate button click listener
-//     generateBtn.addEventListener('click', function () {
-//         generateIQ(Input);
-//         console.log(Input);
-//     });
-// }
-
-// init();
-
-
-
-
-//TEST
-// const cvs = document.getElementById("snake");  
-// const ctx = cvs.getContext("2d");  
-// const box = 32; 
-
-// //set up snake
-// let snake = [];  
-// snake[0] = {  
-//     x : 9 * box,  
-//     y : 10 * box  
-// };  
-
-// //set up food
-// let food = {  
-//     x : Math.floor(Math.random()*17+1) * box,  
-//     y : Math.floor(Math.random()*15+3) * box  
-// }  
-
-// // key interactions
-// let score = 0;
-// let d;  
-// box.addEventListener("click",direction);  
-// function direction(event){  
-//     let key = event.keyCode;  
-//     if( key == 37 && d != "RIGHT"){  
-//         left.play();  
-//         d = "LEFT";  
-//     }else if(key == 38 && d != "DOWN"){  
-//         d = "UP";  
-//         up.play();  
-//     }else if(key == 39 && d != "LEFT"){  
-//         d = "RIGHT";  
-//         right.play();  
-//     }else if(key == 40 && d != "UP"){  
-//         d = "DOWN";  
-//         down.play();  
-//     }  
-// }  
-
-// //draw snake
-// function draw(){  
-            
-//     for( let i = 0; i < snake.length ; i++){  
-//         ctx.fillStyle = ( i == 0 )? "green" : "white";  
-//         ctx.fillRect(snake[i].x,snake[i].y,box,box);  
-          
-//         ctx.strokeStyle = "red";  
-//         ctx.strokeRect(snake[i].x,snake[i].y,box,box);  
-//     }   
  
-//     //ctx.drawImage(foodImg, food.x, food.y);  
-//     let snakeX = snake[0].x;  
-//     let snakeY = snake[0].y;  
-//     if( d == "LEFT") snakeX -= box;  
-//     if( d == "UP") snakeY -= box;  
-//     if( d == "RIGHT") snakeX += box;  
-//     if( d == "DOWN") snakeY += box;  
-//     if(snakeX == food.x && snakeY == food.y){  
-//         score++;  
-//         //eat.play();  
-//         // food = {  
-//         //     x : Math.floor(Math.random()*17+1) * box,  
-//         //     y : Math.floor(Math.random()*15+3) * box  
-//         // }  
- 
-//     }else{  
- 
-//         snake.pop();  
-//     }  
- 
-//     let newHead = {  
-//         x : snakeX,  
-//         y : snakeY  
-//     }   
- 
-//     if(snakeX < box || snakeX > 17 * box || snakeY < 3*box || snakeY > 17*box || collision(newHead,snake)){  
-//         clearInterval(game);  
-//         //dead.play();  
-//     }  
-      
-//     snake.unshift(newHead);  
-      
-//     ctx.fillStyle = "blue";  
-//     ctx.font = "45px Changa one";  
-//     ctx.fillText(score,2*box,1.6*box);  
-// }  
- 
-// setInterval(draw,100); 
-
-//others
-//console.log(fruitname);
-//add to the initially empty list
-//next time get the latest global list
-//   basketlist.push(fruitname);
-//console.log(basketlist);
-//   return basketlist;
-
-// function addFruit(event){
-//with event listener
-//     console.log(event.target.name)
-//     // const buttons= exercise2.querySelectorAll('button');
-//     // buttons.forEach(button=>{
-//     //     button.addEventListener('click',addToCart)
-//     //     console.log(button)
-//     // })
-// }
-//var basketlist = []
-//parseInt
